@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    hello-world
+    hello-world \
+    gettingStartedQml
