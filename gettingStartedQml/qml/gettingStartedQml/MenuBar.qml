@@ -31,7 +31,7 @@ Rectangle {
                     width: 50; height: 20
                     buttonColor: menuListView.currentIndex == 0 ?
                                      fileColor :
-                                     fileColor(Qt.darker(fileColor, 1.5))
+                                     Qt.darker(fileColor, 1.5)
                     label: "File"
                     labelSize: menuListView.currentIndex == 0 ? 16 : 12
                     radius: 1
