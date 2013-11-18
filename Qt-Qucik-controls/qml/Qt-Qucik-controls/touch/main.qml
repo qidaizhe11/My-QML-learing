@@ -16,9 +16,40 @@ ApplicationWindow {
         width: parent.width
         height: 100
 
-//        Rectangle {
+        Rectangle {
+            id: backButton
+            width: opacity ? 60 : 0
+            anchors.left: parent.left
+            anchors.leftMargin: 20
+            opacity: stackView.depth > 1 ? 1 : 0
+            anchors.verticalCenter: parent.verticalCenter
+            antialiasing: true
+            height: 60
+            radius: 4
+            color: backmouse.pressed ? "#222" : "transparent"
+            Behavior on opacity { NumberAnimation {} }
 
-//        }
+            Image {
+                anchors.verticalCenter: parent.verticalCenter
+                source: "../../../images/navigation_previous_item.png"
+            }
+
+            MouseArea {
+                id: backmouse
+                anchors.fill: parent
+                anchors.margins: -10
+                onClicked: stackView.pop()
+            }
+        }
+
+        Text {
+            font.pixelSize: 42
+            Behavior on x { NumberAnimation { easing.type: Easing.OutCubic } }
+            x: backButton.x + backButton.width + 20
+            anchors.verticalCenter: parent.verticalCenter
+            color: "white"
+            text: "Widget Gallery"
+        }
     }
 
     ListModel {
@@ -26,6 +57,14 @@ ApplicationWindow {
         ListElement {
             title: "Buttons"
             page: "ButtonPage.qml"
+        }
+        ListElement {
+            title: "ProgressBar"
+            page: "ProgressBarPage.qml"
+        }
+        ListElement {
+            title: "Tabs"
+            page: "TabBarPage.qml"
         }
     }
 
