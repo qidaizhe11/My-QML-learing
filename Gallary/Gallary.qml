@@ -143,6 +143,7 @@ ApplicationWindow {
         }
         Tab {
             title: "Layouts"
+            Layouts { anchors.fill: parent }
         }
     }
 }

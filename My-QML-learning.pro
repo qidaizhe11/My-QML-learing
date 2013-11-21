@@ -4,4 +4,5 @@ SUBDIRS += \
     Qt-Qucik-controls \
     Animation \
     RightToLeft \
-    Calculator
+    Calculator \
+    Gallery
