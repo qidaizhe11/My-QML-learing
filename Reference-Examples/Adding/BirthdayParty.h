@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QDate>
+#include <QDebug>
 //#include <QQmlListProperty>
 #include <qqml.h>
 #include "Person.h"
@@ -27,6 +28,7 @@ class BirthdayParty : public QObject
   Q_OBJECT
   Q_PROPERTY(Person *host READ host WRITE setHost)
   Q_PROPERTY(QQmlListProperty<Person> guests READ guests)
+  Q_PROPERTY(QString announcement READ announcement WRITE setAnnouncement)
   Q_CLASSINFO("DefaultProperty", "guests")
 
 public:
@@ -39,11 +41,17 @@ public:
   int guestCount() const;
   Person *guest(int index) const;
 
+  QString announcement() const;
+  void setAnnouncement(const QString &str);
+
   Q_INVOKABLE void invite(const QString &name);
 
   static BirthdayPartyAttached *qmlAttachedProperties(QObject *);
 
+  void startParty();
+
 signals:
+  void partyStarted(const QTime &time);
 
 public slots:
 

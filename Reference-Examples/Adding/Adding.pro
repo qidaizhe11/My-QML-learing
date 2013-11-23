@@ -14,7 +14,8 @@ QML_IMPORT_PATH =
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
     Person.cpp \
-    BirthdayParty.cpp
+    BirthdayParty.cpp \
+    HappyBirthdaySong.cpp
 
 # Installation path
 # target.path =
@@ -25,7 +26,8 @@ qtcAddDeployment()
 
 HEADERS += \
     Person.h \
-    BirthdayParty.h
+    BirthdayParty.h \
+    HappyBirthdaySong.h
 
 RESOURCES += \
     Adding.qrc

@@ -4,6 +4,7 @@
 #include <QQmlComponent>
 #include <QDebug>
 #include "BirthdayParty.h"
+#include "HappyBirthdaySong.h"
 #include "Person.h"
 
 int main(int argc, char *argv[])
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<BirthdayPartyAttached>();
     qmlRegisterType<BirthdayParty>("People", 1, 0, "BirthdayParty");
+    qmlRegisterType<HappyBirthdaySong>("People", 1, 0, "HappyBirthdaySong");
 //    qmlRegisterType<Person>("People", 1, 0, "Person");
     qmlRegisterType<ShoeDescription>();
     qmlRegisterType<Person>();
@@ -56,7 +58,7 @@ int main(int argc, char *argv[])
       if (bestShoe)
         qWarning() << bestShoe->name() << "is wearing the best shoes!";
 
-
+      party->startParty();
     }
     else {
       qWarning() << component.errors();

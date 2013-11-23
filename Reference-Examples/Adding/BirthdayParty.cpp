@@ -46,11 +46,27 @@ Person *BirthdayParty::guest(int index) const
   return m_guests.at(index);
 }
 
+QString BirthdayParty::announcement() const
+{
+  return QString();
+}
+
+void BirthdayParty::setAnnouncement(const QString &str)
+{
+  qWarning() << qPrintable(str);
+}
+
 void BirthdayParty::invite(const QString &name)
 {
   Person *person = new Person(this);
   person->setName(name);
   m_guests.append(person);
+}
+
+void BirthdayParty::startParty()
+{
+  QTime time = QTime::currentTime();
+  emit partyStarted(time);
 }
 
 BirthdayPartyAttached *BirthdayParty::qmlAttachedProperties(QObject *object)

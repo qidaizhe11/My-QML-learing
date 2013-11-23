@@ -2,6 +2,12 @@ import QtQuick 2.0
 import People 1.0
 
 BirthdayParty {
+    id: theParty
+
+    HappyBirthdaySong on announcement { name: "Bob Jones" }
+
+    onPartyStarted: console.log("This party started rockin at " + time);
+
     host: Boy {
         name: "Bob Jones"
         shoe { size: 12; color: "white"; brand: "Bikey"; price: 90 }
