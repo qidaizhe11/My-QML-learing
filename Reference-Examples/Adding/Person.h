@@ -27,4 +27,19 @@ private:
   int m_shoeSize;
 };
 
+class Boy : public Person
+{
+  Q_OBJECT
+
+public:
+  Boy(QObject *parent = 0) {}
+};
+
+class Girl : public Person
+{
+  Q_OBJECT
+public:
+  Girl(QObject *parent = 0) {}
+};
+
 #endif // PERSON_H
