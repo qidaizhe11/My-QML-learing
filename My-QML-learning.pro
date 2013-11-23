@@ -4,4 +4,4 @@ SUBDIRS += \
     Qt-Qucik-controls \
     Animation \
     Calculator \
-    Gallery
+    Reference-Examples/Adding
