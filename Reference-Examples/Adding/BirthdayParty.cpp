@@ -1,5 +1,21 @@
 #include "BirthdayParty.h"
 
+BirthdayPartyAttached::BirthdayPartyAttached(QObject *object)
+  : QObject(object)
+{
+}
+
+QDate BirthdayPartyAttached::rsvp() const
+{
+  return m_rsvp;
+}
+
+void BirthdayPartyAttached::setRsvp(const QDate &date)
+{
+  m_rsvp = date;
+}
+
+
 BirthdayParty::BirthdayParty(QObject *parent) :
   QObject(parent), m_host(0)
 {
@@ -28,4 +44,16 @@ int BirthdayParty::guestCount() const
 Person *BirthdayParty::guest(int index) const
 {
   return m_guests.at(index);
+}
+
+void BirthdayParty::invite(const QString &name)
+{
+  Person *person = new Person(this);
+  person->setName(name);
+  m_guests.append(person);
+}
+
+BirthdayPartyAttached *BirthdayParty::qmlAttachedProperties(QObject *object)
+{
+  return new BirthdayPartyAttached(object);
 }

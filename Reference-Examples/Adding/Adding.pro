@@ -26,3 +26,6 @@ qtcAddDeployment()
 HEADERS += \
     Person.h \
     BirthdayParty.h
+
+RESOURCES += \
+    Adding.qrc
