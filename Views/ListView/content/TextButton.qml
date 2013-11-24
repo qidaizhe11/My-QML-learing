@@ -10,10 +10,13 @@ Rectangle {
     width: label.width + 20; height: label.height + 6
     antialiasing: true
 
-    gradient: Gradient {
-        GradientStop { id: gradientStop; position: 0.0; color: "#eeeeee" }
-        GradientStop { position: 1.0; color: "#888888" }
-    }
+//    gradient: Gradient {
+//        GradientStop { id: gradientStop; position: 0.0; color: "#eeeeee" }
+//        GradientStop { position: 1.0; color: "#888888" }
+//    }
+
+    color: mouseArea.pressed ? Qt.darker("#eeeeee", 1.5) : "#eeeeee"
+    Behavior on color { ColorAnimation { duration: 55 } }
 
     Text {
         id: label
@@ -26,9 +29,9 @@ Rectangle {
         onClicked: { container.clicked() }
     }
 
-    states: State {
-        name: "pressed"
-        when: mouseArea.pressed
-        PropertyChanges { target: gradientStop; color: "#333333" }
-    }
+//    states: State {
+//        name: "pressed"
+//        when: mouseArea.pressed
+//        PropertyChanges { target: gradientStop; color: "#333333" }
+//    }
 }
