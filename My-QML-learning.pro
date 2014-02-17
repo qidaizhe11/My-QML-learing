@@ -1,7 +1,8 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    Qt-Qucik-controls \
-    Animation \
-    Calculator \
-    Reference-Examples/Adding
+#    Qt-Qucik-controls \
+#    Animation \
+#    Calculator \
+#    Reference-Examples/Adding \
+    PhotoSurface
